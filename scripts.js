@@ -77,19 +77,19 @@ function unflipCards() {
 
 }
 
-function resetBoard() {
+function resetBoard(cardResetNum) {
     hasFlippledCard = false;
     lockBoard = false;
-
+    
 
     [firstCard, secondCard] = [null, null];
 
 }
 
-
+//THIS MAKES THE CARDS RANDOM
 (function shuffle() {
     cards.forEach(card => {
-      let randomPos = Math.floor(Math.random() * 5);
+      let randomPos = Math.floor(Math.random() * 100);
       card.style.order = randomPos;
 
       
@@ -104,9 +104,9 @@ function resetCards(){
         if (cardNumbers.has(card.style.order) || cardNumbers.has(card.style.order) === true){
             
         
-            resetBoard();
             card.classList.remove('flip');
-            resetBoard();
+            
+           
         }
 
        
@@ -119,3 +119,5 @@ function resetCards(){
 cards.forEach(card => card.addEventListener('click', flipCard));
 
 //TODO THE RESET BUTTON
+
+//MAKE THE CARDS USABLE AFTER RESET, ATM YOU CANNOT CLICK THEM AGAIN
