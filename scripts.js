@@ -1,6 +1,5 @@
 const cards = document.querySelectorAll('.cards');
 
-
 let hasFlippledCard = false;
 let firstCard, secondCard;
 
@@ -9,6 +8,10 @@ let nums = {}
 
 //LOCK THE BOARD UNTIL CARDS UNFLIP IF THERE IS NO MATCH
 let lockBoard = false;
+
+
+
+
 
 function checkMatch() {
 
@@ -27,6 +30,8 @@ function checkMatch() {
 
 
 }
+
+
 
 function flipCard() {
 
@@ -100,10 +105,14 @@ function resetBoard(cardResetNum) {
 function resetCards() {
 
     cards.forEach(card => {
+        if(hasFlippledCard)
+        card.classList.remove('flip');
+
 
         if (cardNumbers.has(card.style.order) || cardNumbers.has(card.style.order) === true) {
 
 
+      
 
             card.classList.remove('flip');
             card.addEventListener('click', flipCard);
@@ -143,3 +152,27 @@ function suffleInGame() {
 
     });
 }
+
+
+
+
+
+const container = document.getElementById('outsideContainer');
+const section = document.getElementsById('insideContainer');
+
+var cardAmount = window.prompt("How many cards do you want? (The minimum is two, and you can only input EVEN numbers)");
+
+
+for (i=0; i<cardAmount;i++){
+
+    var div = document.createElement('div');
+    div.setAttribute('class','cards');
+    div.setAttribute('data-framework', )
+
+}
+
+
+let file = $("imgs/front-face.png")[0].files[0]; 
+
+alert(file.name)
+
